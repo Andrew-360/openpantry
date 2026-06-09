@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: community-pantry-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: community_pantry_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"

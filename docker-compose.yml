@@ -1,0 +1,24 @@
+services:
+  backend:
+    build:
+      context: ./communityPantry
+      dockerfile: Dockerfile
+    container_name: classchampions-backend
+    ports:
+      - "8080:8080"
+    environment:
+      jwt.secret: /Sb/oTvf7xabCjQOLVdqyb4JYbjw0YZhbSqk45eFw5c=
+      app.cors.allowed-origins: "http://localhost:3000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_BASE_URL: http://localhost:8080
+    container_name: classchampions-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
