@@ -1,4 +1,4 @@
-# ClassChampions
+# Open Pantry
 
 Run the entire application locally using Docker.
 You must have Docker Desktop installed and running before starting the stack.
